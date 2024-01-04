@@ -1,0 +1,35 @@
+@import './utils/vars.scss';
+
+@mixin base_button {
+    background: none;
+    border: none;
+    color: $col;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    &:hover {
+        background-color: $bgcol1;
+        opacity: 0.8;
+        transition: all 0.5s;
+    }
+}
+
+.small {
+    @include base_button;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+}
+
+.medium {
+    @include base_button;
+    padding: 5px 10px 5px 10px;
+    font-size: 1.25rem;
+    margin: 10px;
+}
+
+.large {
+    @include base_button;
+    padding: 10px 20px 10px 20px;
+    margin: 15px;
+    font-size: 1.5rem;
+}

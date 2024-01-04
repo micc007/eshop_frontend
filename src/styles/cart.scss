@@ -1,0 +1,31 @@
+@import './utils/vars.scss';
+@import './utils/grid.scss';
+
+@mixin cart_content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 50px;
+    margin: auto;
+    color: $col;
+}
+
+.cart_content {
+    @include cart_content;
+}
+
+@mixin cart_item {
+    padding: 10px;
+    margin: 10px auto 10px auto;
+    background-color: #c9c8c8;
+    border-radius: 0.5rem;
+}
+
+.cart_item {
+    @include cart_item;
+    .item_name {
+        cursor: pointer;
+    }
+}

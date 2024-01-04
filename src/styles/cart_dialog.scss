@@ -1,0 +1,41 @@
+@import './utils/vars.scss';
+@import './utils/grid.scss';
+@import './cart.scss';
+
+
+dialog {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: auto;
+    border: none;
+    background-color: $cartDialogBgCol;
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.cart_content {
+    @include cart_content;
+}
+
+.exit_button {
+    // background-color: white;
+    width: 100%;
+    align-self: flex-start;
+    button {
+        font-size: 2rem;
+        line-height: 1rem;
+        border: none;
+        background: none;
+        font-weight: 600;
+        cursor: pointer;
+        float: right;
+        margin: 10px;
+    }
+}
+
+.cart_dialog_animation-enter-from { transform: translateY(-100%); }
+.cart_dialog_animation-enter-to { transform: translateY(0%) translateX(0%);}
+.cart_dialog_animation-enter-active { transition: transform 0.5s ease; }
+

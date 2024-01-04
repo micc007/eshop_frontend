@@ -1,0 +1,48 @@
+@import './utils/vars.scss';
+
+.sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    gap: 1px;
+    background-color: transparent;
+}
+
+.sidebar_item {
+    width: 100%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    p {
+        color: $col;
+        width: 100%;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 10px;
+    }
+    
+}
+
+.sidebar_item_main {
+    @extend .sidebar_item;
+    background-color: $bgcol1;
+    border: 2px solid $borderCol;
+    &:hover {
+        transform: translateX(5%);
+    }
+}
+
+.sidebar_item_secondary {
+    @extend .sidebar_item;
+    width: 90%;
+    background-color: $bgcol2;
+    &:hover {
+        transform: translateX(5%);
+    }
+}
+
+.hidden {
+    display: none;
+}

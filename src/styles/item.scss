@@ -1,0 +1,13 @@
+@import './utils/vars.scss';
+
+.item_container {
+    height: 200px;
+    background-color: $itemBgCol;
+    border: 2px solid $itemBorderCol;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

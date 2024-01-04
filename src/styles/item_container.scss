@@ -1,0 +1,8 @@
+@import './utils/vars.scss';
+@import './utils/grid.scss';
+
+.items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

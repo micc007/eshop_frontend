@@ -1,0 +1,41 @@
+// side bar vars
+$bgcol1: #00ad88;
+$bgcol2: #3cd8ff;
+$col: #252525;
+$borderCol: #333333;
+
+//category bar vars
+$categoryBarBorderCol: rgb(40, 40, 40);
+$categoryBarBg: #7dffdf;
+
+// header vars
+$headerBgCol: rgb(255, 140, 70);
+$headerCol: rgb(255, 255, 255);
+
+// item vars
+$itemBorderCol: #3d3d3d;
+$itemBgCol: #dddddd;
+
+// cart dialog vars
+$cartDialogBgCol: #00ad88;
+
+// breakpoints for grid system
+$breakpoints: (
+    "xs": 0,
+    "s": 480px,
+    "m": 720px,
+    "l": 960px,
+    "xl": 1200px
+);
+
+// grid columns
+$grid_columns: 12;
+
+$grid_gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px
+);
+
+$justify-values: flex-start, flex-end, center, space-between, space-around;

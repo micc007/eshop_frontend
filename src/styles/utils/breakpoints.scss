@@ -1,0 +1,43 @@
+@import 'vars.scss';
+
+// extra small
+@mixin xs {
+    @media (min-width: map-get($breakpoints, "xs")){
+        @content;
+    }
+}
+
+// small
+@mixin s {
+    @media (min-width: map-get($breakpoints, "s")){
+        @content;
+    }
+}
+
+// medium
+@mixin m {
+    @media (min-width: map-get($breakpoints, "m")){
+        @content;
+    }
+}
+
+// large
+@mixin l {
+    @media (min-width: map-get($breakpoints, "l")){
+        @content;
+    }
+}
+
+// extra large
+@mixin xl {
+    @media (min-width: map-get($breakpoints, "xl")){
+        @content;
+    }
+}
+
+// for specific width
+@mixin breakpoint($bp: 0) {
+    @media (min-width: map-get($bp)){
+        @content;
+    }
+}
