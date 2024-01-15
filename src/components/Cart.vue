@@ -15,6 +15,7 @@
         <div>
             <p>{{ totalPrice }}</p>
         </div>
+        <Button text="Vytvoriť objednávku" size="small" @click="createOrder"></Button>
     </div>
 
 </template>
@@ -39,6 +40,42 @@ const showFullItem = (id: string) => {
     router.push({ path: `/item/${id}` })
 }
 
+const createOrder = () => {
+
+}
+
+// cust_reg - boolean, if user is registered or not
+// reg_cust_id - string, ID of registered user
+// non_reg_cust - json, data of non registered user (name, lastname, delivery address, tel number, email...)
+// items - array of objects, product_id, quantity, items in cart
+// delivery - string "courier" || "onsite", delivery method
+// payment_method - string "cash" || "payp" || "bank", payment method
+
+// {
+//     "cust_reg": false,
+//     "reg_cust_id": null,
+//     "non_reg_cust": {"meno":"Michal", "priezvisko": "Mitro"},
+//     "items": [
+//         {
+//             "product_id": "QDFOpjgIhPbQjBXfVDuif",
+//             "quantity": 2
+//         },
+//         {
+//             "product_id": "YYj4xXjKkqGUd8-iRCuKw",
+//             "quantity": 2
+//         },
+//         {
+//             "product_id": "nn9JiJ8ETo4SC8IHvz6R6",
+//             "quantity": 1
+//         },
+//         {
+//             "product_id": "bO6JK-6G2ImXhmZoLGCqU",
+//             "quantity": 3
+//         }
+//     ],
+//     "delivery": "courier",
+//     "payment_method": "cash"
+// }
 
 </script>
 
