@@ -7,7 +7,7 @@
             </div>
             <div class="cart_content">
                 <div v-for="item in store.cart.items" class="cart_item col-11-l col-11-m col-11-s">
-                    <p @click="showFullItem(item.id)" class="item_name">{{ item.name }}</p>
+                    <p @click="showFullItem(item.product_id)" class="item_name">{{ item.name }}</p>
                     <p>{{ item.price }}</p>
                     <p>{{ item.quantity }}</p>
                     <Button text="+1" size="small" @click="store.changeQuantity(item.name, 'increase')"></Button>
@@ -67,7 +67,7 @@ const totalPrice = computed(() => {
     return cartPrice.value = store.cartPrice();
 });
 
-const showFullItem = (id: number) => {
+const showFullItem = (id: string) => {
     closeModal();
     router.push({ path: `/item/${id}` });
 }

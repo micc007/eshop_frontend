@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+// import { useStore } from '../store/index';
+// const store = useStore();
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', component: () => import('../views/MainPage.vue') },

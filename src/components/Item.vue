@@ -1,10 +1,10 @@
 <template>
 
-    <div class="item_container" @click="showFullItem(item.id)">
+    <div class="item_container" @click="showFullItem(item.product_id)">
         <p>{{ item.name }}</p>
-        <p>{{ item.category }}</p>
+        <p>{{ item.category_id }}</p>
         <p>{{ item.price }}</p>
-        <Button text="Do košíka" size="medium" @click="store.addToCart(item)">Do košíka</Button>
+        <Button text="Do košíka" size="medium" @click.stop="store.addToCart(item)">Do košíka</Button>
     </div>
 
 </template>
@@ -22,7 +22,7 @@
 
     defineProps<{ item: itemType }>();
 
-    const showFullItem = (id: number) => {
+    const showFullItem = (id: string) => {
         router.push({ path: `/item/${id}` });
     }
 

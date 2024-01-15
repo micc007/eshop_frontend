@@ -5,14 +5,14 @@
             <p @click="allCategories = !allCategories">Všetky kategórie</p>
         </div>
         <div v-for="category in store.categories" class="sidebar_item_secondary" :class="{hidden: allCategories}">
-            <p @click="setCategory(category)">{{ category }}</p>
+            <p @click="setCategory(category.category_id)">{{ category.category }}</p>
         </div>
 
         <div class="sidebar_item_main">
             <p @click="allCategoriesAkcie = !allCategoriesAkcie">Akcie</p>
         </div>
         <div v-for="category in store.categories" class="sidebar_item_secondary" :class="{hidden: allCategoriesAkcie}">
-            <p>{{ category }}</p>
+            <p>{{ category.category }}</p>
         </div>
         <div class="sidebar_item_main">
             <p>Prihlásenie</p>
@@ -34,9 +34,9 @@ const router = useRouter();
 const allCategories = ref<boolean>(true);
 const allCategoriesAkcie = ref<boolean>(true);
 
-const setCategory = (category: string) => {
+const setCategory = (category_id: string) => {
     store.selectedCategories.length = 0;
-    store.selectedCategories.push(category);
+    store.selectedCategories.push(category_id);
     router.push({ path: '/' });
 }
 

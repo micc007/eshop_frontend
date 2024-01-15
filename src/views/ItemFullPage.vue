@@ -17,8 +17,8 @@ import { useStore } from '../store/index';
 const store = useStore();
 
 const item = computed((): itemType => {
-    const id: number = Number(route.params.id as string);
-    const item: itemType = store.items.filter((singleItem) => singleItem.id === id)[0];
+    const id: string = route.params.id as string;
+    const item: itemType = store.items.filter((singleItem) => singleItem.product_id === id)[0];
     return item;
 })
 

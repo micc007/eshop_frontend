@@ -1,10 +1,12 @@
 <template>
 
     <div class="item_container">
-        <p>{{ item.id }}</p>
+        <p>{{ item.product_id }}</p>
+        <p>{{ item.category_id }}</p>
         <p>{{ item.name }}</p>
-        <p>{{ item.category }}</p>
         <p>{{ item.price }}</p>
+        <p>{{ item.stock }}</p>
+        <p>{{ item.specs }}</p>
         <button @click="store.addToCart(item)">Do košíka</button>
     </div>
 

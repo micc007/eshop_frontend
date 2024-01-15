@@ -12,6 +12,19 @@
     <CartDialog />
   </div>
 
+
+  <div>
+    <h1>testing</h1>
+    <button @click="store.fetchCategories">KLIK</button>
+    <div>
+      <h2>categories</h2>
+      {{ store.categories }}
+    </div>
+    <div>
+      <h2>items</h2>
+      {{ store.items }}
+    </div>
+  </div>
   <p>{{ store.cart.isOpened }}</p>
 
   <div class="footer">

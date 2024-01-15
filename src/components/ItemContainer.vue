@@ -30,7 +30,7 @@
         if(store.selectedCategories.length === 0) {
             filteredItems = store.items;
         } else {
-            filteredItems = store.items.filter((item) => store.selectedCategories.includes(item.category));
+            filteredItems = store.items.filter((item) => store.selectedCategories.includes(item.category_id));
         }
         return filteredItems;
     })

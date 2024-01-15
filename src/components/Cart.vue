@@ -2,7 +2,7 @@
 
     <div class="cart_box">
         <div v-for="item in store.cart.items" class="cart_item col-9-l col-9-m col-9-s">
-            <p @click="showFullItem(item.id)" class="item_name">{{ item.name }}</p>
+            <p @click="showFullItem(item.product_id)" class="item_name">{{ item.name }}</p>
             <p>{{ item.price }}</p>
             <p>{{ item.quantity }}</p>
             <Button text="+1" size="small" @click="store.changeQuantity(item.name, 'increase')"></Button>
@@ -35,7 +35,7 @@ const totalPrice = computed(() => {
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-const showFullItem = (id: number) => {
+const showFullItem = (id: string) => {
     router.push({ path: `/item/${id}` })
 }
 

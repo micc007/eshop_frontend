@@ -2,10 +2,10 @@
 
     <div class="category_bar">
         <div v-for="category in store.categories" 
-             @click="selectCategory(category)"
+             @click="selectCategory(category.category_id)"
              class="category_bar_item col-2-l" 
-             :class="{ category_bar_item_passive: !selCat.get(`${category}`), category_bar_item_active: selCat.get(`${category}`)  }">
-            <p>{{ category }}</p>
+             :class="{ category_bar_item_passive: !selCat.get(`${category.category_id}`), category_bar_item_active: selCat.get(`${category.category_id}`)  }">
+            <p>{{ category.category }}</p>
         </div>
     </div>
 
@@ -24,28 +24,28 @@ const selCatMap = ref(new Map());
 
 const selCat = computed(() => {
     store.categories.forEach((category) => {
-        if(store.selectedCategories.includes(category)){
-            selCatMap.value.set(category, true);
+        if(store.selectedCategories.includes(category.category_id)){
+            selCatMap.value.set(category.category_id, true);
         }
         else {
-            selCatMap.value.set(category, false);
+            selCatMap.value.set(category.category_id, false);
         }
     });
 
     return selCatMap.value;
 })
 
-const selectCategory = (category: string) => {
+const selectCategory = (category_id: string) => {
 
     //toggle selected class of sidebar item
-    selCatMap.value.set(category, !selCatMap.value.get(category));
+    selCatMap.value.set(category_id, !selCatMap.value.get(category_id));
 
-    if(store.selectedCategories.includes(category)){
-        let index = store.selectedCategories.indexOf(category);
+    if(store.selectedCategories.includes(category_id)){
+        let index = store.selectedCategories.indexOf(category_id);
         return store.selectedCategories.splice(index,1);
     }
     else {
-        return store.selectedCategories.push(category); 
+        return store.selectedCategories.push(category_id); 
     }
 }
 

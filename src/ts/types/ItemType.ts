@@ -1,6 +1,9 @@
 export type itemType = {
-    id: number,
-    name: string,
+    product_id: string,
+    category_id: string,
     category: string,
-    price: number
+    name: string,
+    price: number,
+    stock?: number,
+    specs?: object,
 }
