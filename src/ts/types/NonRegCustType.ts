@@ -1,4 +1,4 @@
-export type OrderItemType = {
+export type NonRegCustType = {
     meno: string,
     priezvisko: string,
     ulica: string,
