@@ -1,0 +1,36 @@
+@import './utils/vars.scss';
+@import './utils/grid.scss';
+
+.container {
+    margin: 100px auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgcol2;
+    padding: 20px;
+    border-radius: 0.5rem;
+}
+
+input {
+    width: 100%;
+    margin: 0 0 10px 0;
+    background-color: $itemBgCol;
+    outline: none;
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    padding: 5px;
+}
+
+label {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+}

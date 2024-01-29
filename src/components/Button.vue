@@ -1,6 +1,6 @@
 <template>
 
-    <button :class="size">
+    <button :class="size" :type="type">
         {{ text }}
     </button>
 
@@ -13,7 +13,8 @@
 
     defineProps<{ 
         text: string,
-        size: "small" | "medium" | "large"
+        size: "small" | "medium" | "large",
+        type?: "submit" | "reset"
     }>();
 
 

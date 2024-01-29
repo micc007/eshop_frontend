@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { itemType } from '../ts/types/ItemType.ts';
 import { CartItemType } from '../ts/types/CartItemType.ts';
 import { CategoryType } from '../ts/types/CategoryType.ts';
+import { UserDataType } from '../ts/types/UserDataType.ts';
 
 export const useStore = defineStore('main', () => {
 
@@ -12,6 +13,16 @@ export const useStore = defineStore('main', () => {
   const cart = ref({
     isOpened: false as boolean,
     items: [] as CartItemType[]
+  });
+  const loggedIn = ref<boolean>(false);
+  const userLoggedInData = ref<UserDataType>({
+    meno: "miško",
+    priezvisko: "mitro",
+    ulica: "tralala",
+    mesto: "tralala",
+    psc: "tralala",
+    tel: "tralala",
+    email: "tralala"
   })
 
   function fetchCategories() {
@@ -91,7 +102,17 @@ export const useStore = defineStore('main', () => {
     return Number(result.toFixed(2));
   }
 
-  return { 
+  function login(): boolean {
+    return loggedIn.value = true
+  }
+
+  function logout(): boolean {
+    return loggedIn.value = false
+  }
+
+  return {
+    loggedIn,
+    userLoggedInData,
     categories,
     selectedCategories,
     items,
@@ -101,7 +122,9 @@ export const useStore = defineStore('main', () => {
     addToCart,
     deleteFromCart,
     changeQuantity,
-    cartPrice
+    cartPrice,
+    login,
+    logout
   }
 
 });

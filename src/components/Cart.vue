@@ -15,7 +15,7 @@
         <div>
             <p>{{ totalPrice }}</p>
         </div>
-        <Button text="Vytvoriť objednávku" size="small" @click="createOrder"></Button>
+        <Button text="Objednať" size="medium" @click="router.push('/order')"/>
     </div>
 
 </template>
@@ -28,20 +28,16 @@ import Button from './Button.vue';
 import { useStore } from '../store/index';
 const store = useStore();
 
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
 const cartPrice = ref<number>();
 const totalPrice = computed(() => {
     return cartPrice.value = store.cartPrice();
 });
 
-import { useRouter } from 'vue-router';
-const router = useRouter();
-
 const showFullItem = (id: string) => {
     router.push({ path: `/item/${id}` })
-}
-
-const createOrder = () => {
-
 }
 
 // cust_reg - boolean, if user is registered or not

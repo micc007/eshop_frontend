@@ -3,7 +3,7 @@ import { NonRegCustType } from "./NonRegCustType"
 
 export type OrderDataType = {
     cust_reg: boolean,
-    reg_cust_id: string,
+    reg_cust_id: string | null,
     non_reg_cust: NonRegCustType,
     items: OrderItemType[],
     delivery: "courier" | "onsite",
