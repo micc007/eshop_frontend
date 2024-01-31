@@ -15,7 +15,9 @@
             <p>{{ category.category }}</p>
         </div>
         <div class="sidebar_item_main">
-            <p>Prihlásenie</p>
+            <router-link to="/login">
+                <p>Prihlásenie</p>
+            </router-link>
         </div>      
 
     </div>

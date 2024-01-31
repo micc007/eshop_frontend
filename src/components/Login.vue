@@ -49,11 +49,11 @@ const userLogin = () => {
         headers: {
             "Content-Type": "application/json",
         },
-        credentials: "include",
+        // credentials: "include",
         body: JSON.stringify(loginData)
     })
-    .then((res: Response) => res.json)
-    .then(data => {
+    .then((res: Response) => res.text())
+    .then((data) => {
         console.log(data);
         // save user data here if login was successful
         router.go(-1);
