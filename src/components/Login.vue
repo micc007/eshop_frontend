@@ -49,7 +49,7 @@ const userLogin = () => {
         headers: {
             "Content-Type": "application/json",
         },
-        // credentials: "include",
+        credentials: "include",
         body: JSON.stringify(loginData)
     })
     .then((res: Response) => res.text())

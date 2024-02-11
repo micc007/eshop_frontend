@@ -14,11 +14,14 @@
         <div v-for="category in store.categories" class="sidebar_item_secondary" :class="{hidden: allCategoriesAkcie}">
             <p>{{ category.category }}</p>
         </div>
-        <div class="sidebar_item_main">
+        <div v-if="!store.loggedIn" class="sidebar_item_main">
             <router-link to="/login">
                 <p>Prihlásenie</p>
-            </router-link>
-        </div>      
+             </router-link>
+        </div>
+        <div v-if="store.loggedIn" class="sidebar_item_main" @click="userLogout">
+            <p>Odhlásiť sa</p>
+        </div>  
 
     </div>
 
@@ -40,6 +43,28 @@ const setCategory = (category_id: string) => {
     store.selectedCategories.length = 0;
     store.selectedCategories.push(category_id);
     router.push({ path: '/' });
+}
+
+const userLogout = () => {
+    const url: string = `${import.meta.env.VITE_URL_API}/user_logout`;
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        credentials: "include",
+
+    })
+    .then((res: Response) => res.text())
+    .then((data) => {
+        console.log(data);
+        // remove data if logout was successful
+        router.push('/');
+    })
+    .catch(err => {
+        console.log(err);
+    })
 }
 
 </script>
